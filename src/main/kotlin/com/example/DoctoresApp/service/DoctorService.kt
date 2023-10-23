@@ -69,4 +69,10 @@ fun delete (id: Long?):Boolean?{
         throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
     }
         }
+
+
+//lis By ID
+fun listById (id:Long?):Doctor?{
+    return doctorRepository.findById(id)
+    }
 }

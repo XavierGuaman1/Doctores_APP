@@ -53,5 +53,13 @@ fun updateName (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
 fun delete (@PathVariable("id") id: Long):Boolean?{
     return doctorService.delete(id)
     }
+
+//List By ID
+
+@GetMapping("/{id}")
+fun listById (@PathVariable("id") id: Long): ResponseEntity<*>{
+    return ResponseEntity(doctorService.listById (id), HttpStatus.OK)
+    }
 }
+
 
