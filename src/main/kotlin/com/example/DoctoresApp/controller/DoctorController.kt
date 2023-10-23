@@ -5,8 +5,10 @@ import com.example.DoctoresApp.service.DoctorService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -43,6 +45,13 @@ fun update (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
 fun updateName (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
     return ResponseEntity(doctorService.updateName(doctor), HttpStatus.OK)
     }
-}
 
+
+//delete
+
+@DeleteMapping("/delete/{id}")
+fun delete (@PathVariable("id") id: Long):Boolean?{
+    return doctorService.delete(id)
+    }
+}
 

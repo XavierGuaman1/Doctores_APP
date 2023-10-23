@@ -54,7 +54,19 @@ fun updateName(doctor: Doctor): Doctor{
         throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
     }
         }
-    }
 
-    //delete
-//pollo
+
+//delete
+
+fun delete (id: Long?):Boolean?{
+    try{
+        val response = doctorRepository.findById(id)
+            ?: throw Exception("ID no existe")
+        doctorRepository.deleteById(id!!)
+        return true
+    }
+    catch (ex:Exception){
+        throw ResponseStatusException(HttpStatus.NOT_FOUND,ex.message)
+    }
+        }
+}
