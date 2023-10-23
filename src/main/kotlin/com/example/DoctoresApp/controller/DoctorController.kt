@@ -35,9 +35,14 @@ fun save (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
 @PutMapping
 fun update (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
     return ResponseEntity(doctorService.update(doctor), HttpStatus.OK)
-}
-}
+        }
+
 
 //patch
+@PatchMapping
+fun updateName (@RequestBody doctor: Doctor):ResponseEntity<Doctor>{
+    return ResponseEntity(doctorService.updateName(doctor), HttpStatus.OK)
+    }
+}
 
 
