@@ -5,11 +5,11 @@ CREATE TABLE IF NOT EXISTS Doctor (
     PRIMARY KEY (id)
     );
 
-CREATE TABLE IF NOT EXISTS pacientes (
+CREATE TABLE IF NOT EXISTS Patients (
     id SERIAL,
-    Nombre VARCHAR(100) NOT NULL,
-    Apellido VARCHAR(100) NOT NULL,
-    pacientes_id INT NOT NULL,
+    fullname VARCHAR(100) NOT NULL,
+    lastname VARCHAR(100) NOT NULL,
+    Patients_id INT NOT NULL,
     PRIMARY KEY (id),
-    FOREIGN KEY (pacientes_id ) REFERENCES pacientes(id)
+    FOREIGN KEY (Patients_id ) REFERENCES Patients(id)
     );

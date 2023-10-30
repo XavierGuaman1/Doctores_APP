@@ -18,5 +18,5 @@ spring:
   datasource:
     url: jdbc:postgresql://bubble.db.elephantsql.com:5432/dpbzdsrz?socketTimeout=3
     username: dpbzdsrz
-    password: d0SxiWRxGknU43dNDWapbLf4Syt0Z_1k
+    password: t6u6MEjVkefCcPsIzSMT6UBKP6uLml6g
     driverClassName: org.postgresql.Driver
