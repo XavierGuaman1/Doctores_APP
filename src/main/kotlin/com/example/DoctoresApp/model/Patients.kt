@@ -18,6 +18,6 @@ class Patients {
     var fullname: String? = null
     var lastname: String? = null
 
-    @Column(name = "Doctor_id")
-    var DoctorID: Long? = null
+    @Column(name = "Patients_id")
+    var patientsid : Long? = null
 }

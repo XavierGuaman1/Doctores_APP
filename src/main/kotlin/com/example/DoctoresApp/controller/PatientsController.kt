@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("/patients")   //endpoint
+@RequestMapping("/Patients")   //endpoint
 class PatientsController {
     @Autowired
     lateinit var patientsService: PatientsService

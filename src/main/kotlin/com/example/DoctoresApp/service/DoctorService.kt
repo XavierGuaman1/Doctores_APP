@@ -19,6 +19,8 @@ class DoctorService {
 
 fun save(doctor: Doctor): Doctor{
     try{
+        doctor.nombre?.takeIf { it.trim().isNotEmpty() }
+            ?: throw Exception("Nombres no debe ser vacio")
         return doctorRepository.save(doctor)
     }
     catch (ex:Exception){

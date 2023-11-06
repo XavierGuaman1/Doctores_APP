@@ -22,8 +22,10 @@ class PatientsService {
     }
     fun save(patients: Patients):Patients{
         try {
-            patientsRepository.findById(patients.DoctorID)
-                ?: throw Exception("Id del Doctor no found")
+            patients.fullname?.takeIf { it.trim().isNotEmpty() }
+                ?: throw Exception("Nombres no debe ser vacio")
+            patientsRepository.findById(patients.patientsid)
+                ?: throw Exception("Id del Patients no found")
             return patientsRepository.save(patients)
         }catch (ex : Exception){
             throw ResponseStatusException(
@@ -47,7 +49,7 @@ class PatientsService {
             val response = patientsRepository.findById(patients.id)
                 ?: throw Exception("ID no exists")
             response.apply {
-                fullname=patients.fullname //un attribute del model
+                lastname=patients.lastname//un attribute del model
             }
             return patientsRepository.save(response)
         }
